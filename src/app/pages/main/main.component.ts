@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Store} from "@ngrx/store";
 import {increment, decrement, reset} from "./main.actions";
@@ -8,7 +8,7 @@ import {increment, decrement, reset} from "./main.actions";
   templateUrl: 'main.component.html',
   styleUrls: ['main.component.scss']
 })
-export class MainComponent implements OnInit {
+export class MainComponent {
   title = 'test-angular-app';
   count$: Observable<number>;
 
@@ -26,9 +26,5 @@ export class MainComponent implements OnInit {
 
   reset() {
     this.store.dispatch(reset());
-  }
-
-  ngOnInit() {
-
   }
 }
